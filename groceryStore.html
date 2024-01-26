@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Link to the Styling document CSS that is very simple-->
+    <ink href="style.css" rel="stylesheet" type="text/css">
+    <title>Slow Food Grocery Community</title>
+</head>
+<body>
+    <!--Tab links, each one will have a 1 click event-->
+
+    <!--class tab for all the tabbies-->
+    <div class="tab">
+        <button class="tablinks" onClick="openInfo(event,'Client')">Client</button>
+        <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+        <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+    </div>
+
+    <!--Tab for Client-->
+    <div id="Client" class="tabcontent">
+        <h3>Client Page</h3>
+        <p>Tell us about you and your needs.</p>
+        
+        What are your dietery restrictions?
+        <select id="dietChoices" name="dietChoices" onchange="theChoicesOfProducts(this.id,'displayProduct')">
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="GlutenFree">Gluten Free </option>
+            <option value="None">None</option>
+        </select>
+
+        What are your preferences?
+        <select id="organicProducts" name=""organicProducts onchange="theChoicesOfProducts(this.id,'displayProduct')">
+            <option value="Organic">Organic</option>
+            <option value="Non Organic">Non-Organic</option>
+            <option value="None">None</option>
+        </select>
+    </div>
+
+    <!--Tab for Products-->
+    <div id="Products" class="tabcontent">
+        <h3>Your choice of Products</h3>
+        <p>Here are the Products most appropriate for you: </p>
+        Choose items to buy:
+            <div id="displayProduct"></div>
+            <button id="addToCart" type="button" class="block" onclick="selectProducts()">
+                Add selected items to cart.
+            </button>
+    </div>
+
+    <!--Tab for carts-->
+    <div id="Cart" class="tabcontent">
+        <h3>Cart</h3>
+        <p>Here is your cart: </p>
+        <div id="displayCart"></div>
+    </div>
+
+    <script></script>
+</body>
+</html>
