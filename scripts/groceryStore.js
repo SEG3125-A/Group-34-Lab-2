@@ -1,23 +1,75 @@
 // Array of products, each product is an object with different fieldset
-// A set of ingredients should be added to products		 
+// A set of ingredients should be added to products
 
 var products = [
 	{
 		name: "brocoli",
 		vegetarian: true,
 		glutenFree: true,
+		organic:true,
 		price: 1.99
 	},
 	{
 		name: "bread",
 		vegetarian: true,
 		glutenFree: false,
+		organic:true,
 		price: 2.35
 	},
 	{
 		name: "salmon",
 		vegetarian: false,
 		glutenFree: true,
+		organic:false,
+		price: 10.00
+	},
+	{
+		name:"carrot",
+		vegetarian: true,
+		glutenFree: true,
+		organic:false,
+		price: 3.00
+	},
+	{
+		name:"noodles",
+		vegetarian: true,
+		glutenFree: false,
+		organic:false,
+		price: 6.00
+	},
+	{
+		name:"chicken poutine",
+		vegetarian: false,
+		glutenFree: false,
+		organic:true,
+		price: 14.00
+	},
+	{
+		name:"tomato",
+		vegetarian: true,
+		glutenFree: true,
+		organic:true,
+		price: 5.00
+	},
+	{
+		name:"fries",
+		vegetarian: true,
+		glutenFree: false,
+		organic:false,
+		price: 7.00
+	},
+	{
+		name:"sunflower oil",
+		vegetarian: true,
+		glutenFree: true,
+		organic:true,
+		price: 4.60
+	},
+	{
+		name:"garlic parmasean fries",
+		vegetarian: true,
+		glutenFree: false,
+		organic:false,
 		price: 10.00
 	}
 ];
@@ -38,6 +90,12 @@ function restrictListProducts(prods, restriction) {
 			product_names.push(prods[i].name);
 		}
 		else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
+			product_names.push(prods[i].name);
+		}
+		else if((restriction == "Non-organic") && (prods[i].organic == false)){
+			product_names.push(prods[i].name);
+		}
+		else if((restriction == "Organic")&&(prods[i].organic == false)){
 			product_names.push(prods[i].name);
 		}
 		else if (restriction == "None"){
